@@ -3,7 +3,11 @@ function AddToCart({addToCart, product, count, setCount}) {
   function resetCount() {
     setCount(0);
   }
+  function checkCount() {
+    return count > 0;
+  }
   function handleAddToCart() {
+    if (!checkCount()) return;
     addToCart(product, count);
     resetCount();
   }
